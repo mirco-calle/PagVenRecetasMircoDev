@@ -1,73 +1,164 @@
-# React + TypeScript + Vite
+# 🍳 PagRecetas - Plataforma de Recetas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una plataforma moderna y elegante para descubrir y compartir recetas deliciosas, construida con las últimas tecnologías web.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Características Principales
 
-## React Compiler
+- ✨ Interfaz moderna y responsive
+- 🎨 Diseño temático personalizado (Navidad, Chocolate)
+- ⚡ Rendimiento optimizado con Vite
+- 🔐 Pagos seguros integrados
+- 📱 Totalmente mobile-friendly
+- 🎯 Contador regresivo para ofertas limitadas
+- 🌙 Soporte para modo oscuro
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📸 Capturas de Pantalla
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Página Principal
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![Hero Section](./screenshots/hero.png)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Sección de Recetas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+![Recipes Section](./screenshots/recipes.png)
+
+### Checkout
+
+![Checkout Section](./screenshots/checkout.png)
+
+---
+
+## 🛠️ Stack Tecnológico
+
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI
+- **Icons**: Lucide React
+- **Payment Gateway**: Hotmart
+
+---
+
+## 📋 Requisitos Previos
+
+- Node.js 16+
+- npm o yarn
+
+---
+
+## 🔧 Instalación
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/PagRecetas.git
+
+# Entrar al directorio
+cd PagRecetas
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── components/        # Componentes React reutilizables
+├── lib/              # Utilidades y funciones helper
+├── styles/           # Estilos globales
+├── pages/            # Páginas de la aplicación
+└── App.tsx           # Componente principal
+```
+
+---
+
+## 🚀 Scripts Disponibles
+
+```bash
+# Desarrollo
+npm run dev
+
+# Build para producción
+npm run build
+
+# Preview de build
+npm run preview
+
+# Linting
+npm run lint
+```
+
+---
+
+## 🎨 Personalización
+
+### Colores Temáticos
+
+Los colores se pueden personalizar en `tailwind.config.js`:
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+colors: {
+  christmas: {
+    red: "hsl(var(--christmas-red))",
+    gold: "hsl(var(--christmas-gold))",
+    cream: "hsl(var(--christmas-cream))",
+    green: "hsl(var(--christmas-green))",
   },
-])
+  chocolate: "hsl(var(--chocolate))",
+}
 ```
+
+### Tipografía
+
+```js
+fontFamily: {
+  display: ["Playfair Display", "serif"],
+  body: ["Inter", "sans-serif"],
+}
+```
+
+---
+
+## 🔗 Enlaces Útiles
+
+- [Documentación de React](https://react.dev)
+- [Documentación de Vite](https://vitejs.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Radix UI](https://www.radix-ui.com)
+
+---
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas. Para cambios mayores:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
+
+---
+
+## 📞 Soporte
+
+Para preguntas o soporte, contacta a: [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
+
+---
+
+**Hecho con ❤️ para amantes de la cocina**
