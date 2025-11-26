@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Christmas-themed Sales Page Design System */
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --background: 42 100% 97%;
+    --foreground: 14 25% 20%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 14 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 14 25% 20%;
+
+    /* Primary - Cherry Red (Christmas) */
+    --primary: 351 69% 44%;
+    --primary-foreground: 42 100% 97%;
+
+    /* Secondary - Gold */
+    --secondary: 45 75% 52%;
+    --secondary-foreground: 14 25% 20%;
+
+    /* Muted - Cream tones */
+    --muted: 42 50% 94%;
+    --muted-foreground: 14 15% 45%;
+
+    /* Accent - Pine Green */
+    --accent: 99 48% 20%;
+    --accent-foreground: 42 100% 97%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 42 100% 97%;
+
+    /* Borders */
+    --border: 42 30% 88%;
+    --input: 42 30% 88%;
+    --ring: 351 69% 44%;
+
+    --radius: 0.75rem;
+
+    /* Custom Christmas colors */
+    --christmas-red: 351 69% 44%;
+    --christmas-gold: 45 75% 52%;
+    --christmas-cream: 42 100% 97%;
+    --christmas-green: 99 48% 20%;
+    --chocolate: 14 25% 20%;
+
+    /* Gradients */
+    --gradient-festive: linear-gradient(
+      135deg,
+      hsl(351 69% 44%),
+      hsl(351 69% 35%)
+    );
+    --gradient-gold: linear-gradient(135deg, hsl(45 75% 52%), hsl(45 75% 42%));
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(42 100% 97% / 0.95),
+      hsl(351 69% 44% / 0.05)
+    );
+
+    /* Shadows */
+    --shadow-festive: 0 10px 40px hsl(351 69% 44% / 0.2);
+    --shadow-gold: 0 8px 30px hsl(45 75% 52% / 0.3);
+    --shadow-card: 0 4px 20px hsl(14 25% 20% / 0.08);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Custom Christmas animations */
+@keyframes pulse-festive {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 hsl(351 69% 44% / 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px hsl(351 69% 44% / 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-festive {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg 
+           transition-all duration-300 hover:scale-105 active:scale-95
+           shadow-[0_8px_30px_hsl(351_69%_44%_/_0.3)]
+           hover:shadow-[0_12px_40px_hsl(351_69%_44%_/_0.4)];
+  }
+
+  .btn-festive-pulse {
+    animation: pulse-festive 2s infinite;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+
+  .card-festive {
+    @apply bg-card rounded-2xl p-6 lg:p-8 shadow-[0_4px_20px_hsl(14_25%_20%_/_0.08)]
+           border border-border hover:shadow-[0_8px_30px_hsl(14_25%_20%_/_0.12)]
+           transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}
